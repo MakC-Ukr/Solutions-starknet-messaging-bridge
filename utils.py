@@ -27,3 +27,7 @@ def uint256(val):
 
 def hex_to_felt(val):
     return int(val, 16)
+
+from starkware.starknet.compiler.compile import get_selector_from_name
+
+print(get_selector_from_name('ex2'))

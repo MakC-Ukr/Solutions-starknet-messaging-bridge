@@ -1,0 +1,2 @@
+1. starknet-compile SolutionContract.cairo --output "./artifacts/SolutionContract.json"
+2. starknet deploy --contract artifacts/SolutionContract.json --network alpha-goerli 

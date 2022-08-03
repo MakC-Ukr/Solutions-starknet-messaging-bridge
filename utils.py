@@ -30,4 +30,4 @@ def hex_to_felt(val):
 
 from starkware.starknet.compiler.compile import get_selector_from_name
 
-print(get_selector_from_name('ex2'))
+print(hex_to_felt('0x06a3b22E6059dd35205B94D2081550d3c9B6D4E59A29aA12D755E4C36bC5378E'))

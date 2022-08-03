@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.0;
 
-import "./IStarknetCore.sol";
+import "./contracts/L1/interfaces/IStarknetCore.sol";
 
 
 contract L1Solution{

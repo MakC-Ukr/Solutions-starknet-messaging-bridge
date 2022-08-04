@@ -29,5 +29,5 @@ def uint256(val):
 def hex_to_felt(val):
     return int(val, 16)
 
-print(get_selector_from_name('receive_msg_l2'))
+print(get_selector_from_name('ex2'))
 # 977841473690614430735691280382586133448114452813259595455137122902598953678

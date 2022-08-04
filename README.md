@@ -1,6 +1,6 @@
 # StarkNet messaging bridge solutions
 
-These are the solutions to Starknet messaging bridge. Exercise 2 still remains unsolved. 
+These are the solutions to Starknet messaging bridge.  
 
 ### Exercises & Contract addresses
 
@@ -71,50 +71,3 @@ Write and deploy a contract on L1 that *sends* messages to L2.
 - Deploy your contract on L2
 - Call [`ex4`](contracts/L1/Evaluator.sol#L60) of *L1 Evaluator* to send the random value out to your L2 contract
 - Call [`ex4_b`](contracts/Evaluator.cairo#L266) of *L2 Evaluator* that will check you completed your work correctly and distribute your points
-
-## Annex - Useful tools and ressources
-
-### Converting data to and from decimal
-
-To convert data to felt use the [`utils.py`](utils.py) script
-To open Python in interactive mode after running script
-
-  ```bash
-  python -i utils.py
-  ```
-
-  ```python
-  >>> str_to_felt('ERC20-101')
-  1278752977803006783537
-  ```
-
-### Checking your progress & counting your points
-
-​
-Your points will get credited in your wallet; though this may take some time. If you want to monitor your points count in real time, you can also see your balance in voyager!
-​
-
-- Go to the  [ERC20 counter](https://goerli.voyager.online/contract/0x38ec18163a6923a96870f3d2b948a140df89d30120afdf90270b02c609f8a88#readContract)  in voyager, in the "read contract" tab
-- Enter your address in decimal in the "balanceOf" function
-
-You can also check your overall progress [here](https://starknet-tutorials.vercel.app)
-​
-
-### Transaction status
-
-​
-You sent a transaction, and it is shown as "undetected" in voyager? This can mean two things:
-​
-
-- Your transaction is pending, and will be included in a block shortly. It will then be visible in voyager.
-- Your transaction was invalid, and will NOT be included in a block (there is no such thing as a failed transaction in StarkNet).
-​
-You can (and should) check the status of your transaction with the following URL  [https://alpha4.starknet.io/feeder_gateway/get_transaction_receipt?transactionHash=](https://alpha4.starknet.io/feeder_gateway/get_transaction_receipt?transactionHash=)  , where you can append your transaction hash.
-​
-
-### Articles & documentation
-
-- [Messaging Mechanism | StarkNet Docs](https://docs.starknet.io/docs/L1%3C%3EL2%20Communication/messaging-mechanism)
-- [Interacting with L1 contracts | StarkNet Documentation](https://starknet.io/docs/hello_starknet/l1l2.html)
-- Sample Project: [StarkNet graffiti | GitHub](https://github.com/l-henri/StarkNet-graffiti)
-- [Thread on StarkNet ⇄ Ethereum Messaging | Twitter](https://twitter.com/HenriLieutaud/status/1466324729829154822)

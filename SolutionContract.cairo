@@ -19,7 +19,9 @@ from starkware.starknet.common.messages import send_message_to_l1
 func msg_from_l2() -> (msg : felt):
 end
 
-
+@storage_var
+func l1_assigned_var_storage() -> (l1_ass: felt):
+end
 
 #
 # Declaring getters
@@ -33,12 +35,20 @@ func get_msg_from_l2{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_che
 end
 
 
+@view
+func l1_assigned_var{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}() -> (l1_user: felt):
+    let (msg:felt) = l1_assigned_var_storage.read()
+    return (l1_user = msg)
+end
+
+
 # ######## External functions
 # These functions are callable by other contracts
 #
 
 @constructor
 func constructor{syscall_ptr : felt*, pedersen_ptr : HashBuiltin*, range_check_ptr}():
+    l1_assigned_var_storage.write(69) 
     return ()
 end
 
@@ -66,3 +76,11 @@ func create_l1_nft_message{
 end
 
 
+@l1_handler 
+func receive_msg_l2{
+    syscall_ptr : felt*, 
+    pedersen_ptr : HashBuiltin*, 
+    range_check_ptr}(from_address : felt, rand_value : felt):
+    l1_assigned_var_storage.write(rand_value)
+    return ()
+end

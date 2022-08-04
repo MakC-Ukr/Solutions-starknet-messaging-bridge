@@ -1,5 +1,6 @@
 MAX_LEN_FELT = 31
 
+from starkware.starknet.compiler.compile import get_selector_from_name
 
 def str_to_felt(text):
     if len(text) > MAX_LEN_FELT:
@@ -28,6 +29,5 @@ def uint256(val):
 def hex_to_felt(val):
     return int(val, 16)
 
-from starkware.starknet.compiler.compile import get_selector_from_name
-
-print(hex_to_felt('0x06a3b22E6059dd35205B94D2081550d3c9B6D4E59A29aA12D755E4C36bC5378E'))
+print(get_selector_from_name('receive_msg_l2'))
+# 977841473690614430735691280382586133448114452813259595455137122902598953678
